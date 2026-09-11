@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>AURA ESTATES — Admin</title><link rel="stylesheet" href="styles.css">
+</head>
+<body class="admin-body">
+<div id="loginView" class="login-wrap">
+  <form id="loginForm" class="admin-card admin-panel login-card admin-form">
+    <p class="eyebrow">AURA ESTATES</p><h1>Admin Login</h1>
+    <input id="loginEmail" type="email" placeholder="Admin email" required>
+    <input id="loginPassword" type="password" placeholder="Password" required>
+    <button class="glass-btn primary-btn" type="submit">Sign In</button>
+    <p id="loginMessage"></p>
+  </form>
+</div>
+
+<div id="dashboardView" hidden>
+<header class="navbar"><a href="index.html" class="logo">AURA <span>ESTATES</span></a><button id="logoutBtn" class="small-btn">Logout</button></header>
+<main class="admin-shell">
+  <div class="admin-top"><div><p class="eyebrow">CONTROL CENTRE</p><h1>Website Admin</h1></div></div>
+
+  <section id="stats" class="stats"></section>
+
+  <div class="admin-grid">
+    <section class="admin-panel">
+      <p class="eyebrow">PROPERTY MANAGEMENT</p><h2>Add Property</h2>
+      <form id="propertyForm" class="admin-form" enctype="multipart/form-data">
+        <input name="name" placeholder="Property name" required>
+        <input name="type" placeholder="Property type" required>
+        <input name="price" placeholder="Price (e.g. ₹2.50 Cr)" required>
+        <input name="beds" type="number" min="0" placeholder="Bedrooms" required>
+        <input name="baths" type="number" min="0" placeholder="Bathrooms" required>
+        <input name="area" placeholder="Area (e.g. 3,200 sq.ft.)" required>
+        <input name="description" placeholder="Short description" required>
+        <textarea name="overview" placeholder="Full property details" required></textarea>
+        <input name="image" type="file" accept="image/jpeg,image/png,image/webp" required>
+        <button class="glass-btn primary-btn" type="submit">Add Property</button>
+        <p id="propertyMessage"></p>
+      </form>
+    </section>
+
+    <section class="admin-panel">
+      <p class="eyebrow">LIVE INVENTORY</p><h2>Properties</h2>
+      <div id="propertiesAdmin"></div>
+    </section>
+  </div>
+
+  <section class="admin-panel" style="margin-top:25px">
+    <p class="eyebrow">CLIENT DATA</p><h2>Enquiries / Leads</h2>
+    <div id="leads"></div>
+  </section>
+
+  <section class="admin-panel" style="margin-top:25px">
+    <p class="eyebrow">ANALYTICS</p><h2>Website Activity</h2>
+    <div id="analytics"></div>
+  </section>
+</main>
+</div>
+<script src="admin.js"></script>
+</body></html>
